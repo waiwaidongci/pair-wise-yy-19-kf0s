@@ -129,6 +129,104 @@ textarea {
   margin-top: 14px;
 }
 
+.side {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+}
+
+.btn-row {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-row button {
+  flex: 1;
+}
+
+#sampleCancelBtn,
+#templateCancelBtn {
+  background: #e8f0eb;
+  color: var(--ink);
+}
+
+.hint {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.form-error {
+  margin: 10px 0 0;
+  color: #b3372f;
+  font-size: 13px;
+}
+
+.template-list {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+  margin: 14px 0 0;
+  padding: 0;
+}
+
+.template-list li {
+  display: grid;
+  gap: 4px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: white;
+  padding: 10px;
+  font-size: 13px;
+}
+
+.template-list .tpl-empty {
+  border: 0;
+  background: transparent;
+  padding: 4px 0;
+  color: var(--muted);
+}
+
+.tpl-name {
+  font-weight: 700;
+}
+
+.tpl-meta {
+  color: var(--muted);
+}
+
+.tpl-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.tpl-actions button {
+  width: auto;
+  min-height: 30px;
+  margin-top: 0;
+  padding: 0 10px;
+  background: #e8f0eb;
+  color: var(--ink);
+}
+
+.card-buttons {
+  display: flex;
+  gap: 6px;
+}
+
+.notice {
+  margin: 0;
+  border: 1px solid var(--amber);
+  border-radius: 8px;
+  background: #fdf3e0;
+  color: #7a5410;
+  padding: 8px 10px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
 .board {
   min-height: 720px;
   padding: 12px;
@@ -136,7 +234,7 @@ textarea {
 
 .filters {
   display: grid;
-  grid-template-columns: 1fr 180px;
+  grid-template-columns: 1fr 170px 130px;
   gap: 10px;
   margin-bottom: 12px;
 }
