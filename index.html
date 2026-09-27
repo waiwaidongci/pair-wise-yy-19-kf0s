@@ -17,26 +17,46 @@
     </header>
 
     <section class="layout">
-      <form id="sampleForm" class="editor">
-        <h2>样本录入</h2>
-        <label>显微照片<input id="photoInput" type="file" accept="image/*"></label>
-        <label>样本编号<input name="code" required placeholder="BX-17-03"></label>
-        <label>采样地点<input name="location" placeholder="剖面东侧第二层"></label>
-        <div class="pair">
-          <label>放大倍数<input name="magnification" placeholder="40x"></label>
-          <label>偏光类型
-            <select name="polarization">
-              <option>单偏光</option>
-              <option>正交偏光</option>
-              <option>反射光</option>
-            </select>
-          </label>
-        </div>
-        <label>主要矿物<input name="minerals" placeholder="石英、斜长石、黑云母"></label>
-        <label>颗粒结构<input name="texture" placeholder="半自形粒状、碎裂结构"></label>
-        <label>老师批注<textarea name="comment" rows="4" placeholder="记录鉴定依据或疑点"></textarea></label>
-        <button type="submit">保存样本</button>
-      </form>
+      <div class="side">
+        <form id="sampleForm" class="editor">
+          <h2>样本录入</h2>
+          <label>显微照片<input id="photoInput" type="file" accept="image/*"></label>
+          <label>样本编号<input name="code" required placeholder="BX-17-03"></label>
+          <label>采样地点<input name="location" placeholder="剖面东侧第二层"></label>
+          <div class="pair">
+            <label>放大倍数<input name="magnification" placeholder="40x"></label>
+            <label>偏光类型
+              <select name="polarization">
+                <option>单偏光</option>
+                <option>正交偏光</option>
+                <option>反射光</option>
+              </select>
+            </label>
+          </div>
+          <label>主要矿物<input name="minerals" placeholder="石英、斜长石、黑云母"></label>
+          <label>颗粒结构<input name="texture" placeholder="半自形粒状、碎裂结构"></label>
+          <label>老师批注<textarea name="comment" rows="4" placeholder="记录鉴定依据或疑点"></textarea></label>
+          <div class="form-actions">
+            <button type="submit" id="sampleSubmit">保存样本</button>
+            <button type="button" id="sampleCancelEdit" class="ghost" hidden>取消编辑</button>
+          </div>
+        </form>
+
+        <section class="editor templates">
+          <h2>共生组合模板</h2>
+          <form id="templateForm">
+            <label>组合名称<input name="name" required placeholder="花岗质共生组合"></label>
+            <label>必需矿物（2–4 种）<input name="required" required placeholder="石英、斜长石、黑云母"></label>
+            <label>伴生矿物（可选）<input name="associated" placeholder="锆石、磷灰石"></label>
+            <p id="templateMsg" class="form-msg" role="alert"></p>
+            <div class="form-actions">
+              <button type="submit" id="templateSubmit">保存组合</button>
+              <button type="button" id="templateCancelEdit" class="ghost" hidden>取消编辑</button>
+            </div>
+          </form>
+          <ul id="templateList" class="template-list"></ul>
+        </section>
+      </div>
 
       <section class="board">
         <div class="filters">
@@ -47,12 +67,16 @@
             <option>正交偏光</option>
             <option>反射光</option>
           </select>
+          <select id="assemblyFilter">
+            <option value="">全部组合</option>
+          </select>
         </div>
         <div id="sampleGrid" class="sample-grid"></div>
       </section>
 
       <aside class="compare">
         <h2>并排对比</h2>
+        <p id="compareNotice" class="notice" hidden></p>
         <div id="comparePane" class="compare-pane"></div>
       </aside>
     </section>

@@ -136,7 +136,7 @@ textarea {
 
 .filters {
   display: grid;
-  grid-template-columns: 1fr 180px;
+  grid-template-columns: 1fr 150px 170px;
   gap: 10px;
   margin-bottom: 12px;
 }
@@ -221,6 +221,108 @@ textarea {
   object-fit: cover;
   border-radius: 6px;
   background: #dfe9e4;
+}
+
+.side {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.form-actions button {
+  flex: 1;
+  margin-top: 0;
+}
+
+button.ghost {
+  background: #e8f0eb;
+  color: var(--ink);
+}
+
+.form-msg {
+  margin: 10px 0 0;
+  color: #a4392f;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.form-msg:empty {
+  display: none;
+}
+
+.template-list {
+  display: grid;
+  gap: 10px;
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.template-item {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: white;
+  padding: 10px 12px;
+}
+
+.template-item strong {
+  font-size: 14px;
+}
+
+.template-item p {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.template-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.template-actions button {
+  width: auto;
+  min-height: 30px;
+  margin-top: 0;
+  padding: 0 10px;
+  background: #e8f0eb;
+  color: var(--ink);
+}
+
+.template-empty {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.card-buttons {
+  display: flex;
+  gap: 6px;
+}
+
+.notice {
+  margin: 12px 0 0;
+  border: 1px solid var(--amber);
+  border-radius: 8px;
+  background: #fdf3e0;
+  color: #7a5410;
+  padding: 8px 10px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.shared-combo {
+  margin: 0;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 700;
 }
 
 @media (max-width: 1120px) {
